@@ -1,0 +1,14 @@
+#correct {
+    color: #8EFADA;
+}
+
+#wrong {
+    color: #FAA68E;
+}
+
+body {
+    background-color: #40AD8D;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* #AD6551 #FFBDAB #FAA68E #40AD8D #8EFADA*/
