@@ -1,2 +1,5 @@
-# hi
-This is a random website to practice math
+# Math Website
+
+This is a website to practice math
+
+I am making this because
