@@ -2,15 +2,23 @@ let current = 0;
 let score = 0;
 let questions = [
     ["Solve 2x + 3 > 13.", "x>5", "$N"],
-    ["Solve for larger value: |3x-5| = 3","8/3", "$N"],
+    ["Solve for larger value: |3x-5| = 3","8/3", "x=8/3"],
     ["Done!", "$D", "$N"],
 ] // $D = done $N = no 2nd option
 
 // update function:
 function update() {
     $("#question").html(questions[current][0]);
-    $("#o1").html("")
-    $("#i1").val("")
+    $("#o1").html("");
+    $("#i1").val("");
+    
+    if (questions[current][1] === "$D") {
+        $("#i1").remove();
+        $("#check").remove()
+    } else {
+        $("#i1").show()
+        $("#check").show()
+    }
 }
 
 // function that checks if the answer corrects
@@ -24,12 +32,14 @@ function check() {
         $("#o1").html("<h2 id='wrong'>nice try buddy</h2>");
         score -= 100000;
     } else {
-        $("#o1").html("<h2 id='wrong'>Wrong, Try again!</h2>")
+        $("#o1").html("<h2 id='wrong'>Wrong</h2>")
         score -= 2;
         console.log("no correct");
     }
     console.log(questions[current][1]);
     current += 1;
+    $("#i1").hide();
+    $("#check").hide();
     setTimeout(update, 2000);
 }
 
