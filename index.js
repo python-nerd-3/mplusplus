@@ -13,7 +13,6 @@ let questions = [
     ["If you put $6000 into a bank account with 5% interest for 25 years, how much do you have now?", "2250", "$N"],
     ["Done!", "$D", "$N"]
 ] // $D = done $N = no 2nd option
-let numOfQuestions = questions.length - 1;
 
 // update function:
 function update() {
@@ -31,7 +30,7 @@ function update() {
 }
 
 function scoreUpdate() {
-    $("#score").html("Grade: " + Math.round((grade / numOfQuestions) * 100) + "% <br> Score: " + score);
+    $("#score").html("Grade: " + Math.round((grade / (questions.length - 1)) * 100) + "% <br> Score: " + score);
 }
 
 function wrongUpdate() {
