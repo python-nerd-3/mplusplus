@@ -1,6 +1,7 @@
 let current = 0;
 let score = 0;
 let grade = 0;
+let finalGrade = Math.round((grade / questions.length) * 100);
 let questions = [
     ["Solve 2x + 3 > 13.", "x>5", "$N"],
     ["Solve |3x-5| = 3","8/3", "x=8/3"],
@@ -22,6 +23,10 @@ function update() {
     if (questions[current][1] === "$D") {
         $("#i1").remove();
         $("#check").remove();
+        if (finalGrade == 100) {
+            $("#score").css("color": "#5cb85c");
+            $("#score").html("Grade: 100!!! Great Job! You mastered this concept! Hooray!");
+        }
     } else {
         $("#i1").show();
         $("#check").show();
@@ -29,7 +34,7 @@ function update() {
 }
 
 function scoreUpdate() {
-    $("#score").html("Grade: " + Math.round((grade / questions.length) * 100) + "% <br> Score: " + score);
+    $("#score").html("Grade: " + finalGrade + "% <br> Score: " + score);
 }
 
 function wrongUpdate() {
