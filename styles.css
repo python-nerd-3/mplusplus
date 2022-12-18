@@ -36,6 +36,9 @@ textarea {
     border-color: #40AD8D;
     background-color: #ffffff;
     font-size: 37.75px;
+    resize: none;
+    width: 1203px;
+    height: 207px;
 }
 
 button {
