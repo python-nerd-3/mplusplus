@@ -1,7 +1,6 @@
 let current = 0;
 let score = 0;
 let grade = 0;
-let finalGrade = Math.round((grade / questions.length) * 100);
 let questions = [
     ["Solve 2x + 3 > 13.", "x>5", "$N"],
     ["Solve |3x-5| = 3","8/3", "x=8/3"],
@@ -13,7 +12,7 @@ let questions = [
     ["If you put $6000 into a bank account with 5% interest for 25 years, how much do you have now?", "2250", "$N"],
     ["Done!", "$D", "$N"]
 ] // $D = done $N = no 2nd option
-
+let finalGrade = Math.round((grade / questions.length) * 100);
 // update function:
 function update() {
     $("#question").html(questions[current][0]);
@@ -60,6 +59,7 @@ function check() {
         $("#i1").hide();
         $("#check").hide();
         // update everything
+        let finalGrade = Math.round((grade / questions.length) * 100);
         scoreUpdate()
         setTimeout(update, 2000);
     } else if (answer == "$N") {
