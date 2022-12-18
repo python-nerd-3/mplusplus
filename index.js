@@ -13,6 +13,7 @@ let questions = [
     ["If you put $6000 into a bank account with 5% interest for 25 years, how much do you have now?", "2250", "$N"],
     ["Done!", "$D", "$N"]
 ] // $D = done $N = no 2nd option
+let numOfQuestions = questions.length - 1;
 
 // update function:
 function update() {
@@ -23,7 +24,7 @@ function update() {
     if (questions[current][1] === "$D") {
         $("#i1").remove();
         $("#check").remove();
-        if ((Math.round((grade / questions.length)) * 100) == 100) {
+        if ((Math.round((grade / numOfQuestions)) * 100) == 100) {
             $("#score").css("color": "#5cb85c");
             $("#score").html("Grade: 100!!! Great Job! You mastered this concept! Hooray!");
         }
@@ -34,7 +35,7 @@ function update() {
 }
 
 function scoreUpdate() {
-    $("#score").html("Grade: " + Math.round((grade / questions.length) * 100) + "% <br> Score: " + score);
+    $("#score").html("Grade: " + Math.round((grade / numOfQuestions) * 100) + "% <br> Score: " + score);
 }
 
 function wrongUpdate() {
