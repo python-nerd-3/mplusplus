@@ -7,12 +7,17 @@
         <script src="index.js"></script>
     </head>
     <body>
+        <h1 id="score">0</h1>
         <h2 id="question">Loading...</h2>
-        <textarea id="i1"></textarea>
+        <textarea id="i1" cols="50" rows="1"></textarea>
         <br>
         <button onclick="check()" id="check">Check</button>
         <div id="o1"></div>
 
-        <div><h3>Rules: no spaces in the answer!</h3></div>
+        <div><h3>
+            RULES: 
+            <br>No spaces in the answer! All lowercase. For fractions, use a/b.
+            <br> No punctuation! (ie: $ , ) Always fully simplify, unless told not to.
+        </h3></div>
     </body>
 </html>

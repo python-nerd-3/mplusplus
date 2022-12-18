@@ -6,9 +6,41 @@
     color: #FAA68E;
 }
 
+#score {
+    text-align: center;
+    font-size: 4rem;
+    border: 20px solid;
+    border-color: #161928;
+    border-radius: 20px;
+}
+
 body {
-    background-color: #40AD8D;
+    background-color: #383b4a;
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 80px solid;
+    margin: 20px;
+    padding: 10px;
+    border-color: #161928;
 }
+
 /* #AD6551 #FFBDAB #FAA68E #40AD8D #8EFADA*/
+
+html {
+    background-color: #161928;
+}
+
+textarea {
+    border: 5px solid;
+    border-radius: 5px;
+    border-color: #40AD8D;
+    background-color: #ffffff;
+    font-size: 37.75px;
+}
+
+button {
+    color: #83FADA;
+    background-color: #40AD8D;
+    font-size: 32px;
+    border-radius: 10px;
+}
