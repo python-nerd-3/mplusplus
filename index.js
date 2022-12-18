@@ -29,7 +29,7 @@ function update() {
 }
 
 function scoreUpdate() {
-    $("#score").html("Grade: " + grade + "/" + questions.length + "<br> Score: " + score);
+    $("#score").html("Grade: " + Math.round((grade / questions.length) * 100) + "% <br> Score: " + score);
 }
 
 function wrongUpdate() {
