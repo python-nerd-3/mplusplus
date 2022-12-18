@@ -45,7 +45,7 @@ function check() {
     if ((answer == questions[current][1]) || (answer == questions[current][2] && questions[current][2] != "$N")) {
         // CORRECT!
         $("#o1").html("<h2 id='correct'>Correct</h2>");
-        score += 5;
+        score += 1;
         console.log("correct");
         current += 1;
         // makes it so you don't see the button, text value
@@ -60,7 +60,6 @@ function check() {
     } else {
         // WRONG :(
         $("#o1").html("<h2 id='wrong'>Wrong, try again!</h2>")
-        score -= 2;
         console.log("no correct");
         $("#i1").hide();
         $("#check").hide();
