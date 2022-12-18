@@ -24,10 +24,6 @@ function update() {
     if (questions[current][1] === "$D") {
         $("#i1").remove();
         $("#check").remove();
-        if ((Math.round((grade / numOfQuestions)) * 100) == 100) {
-            $("#score").css("color": "#5cb85c");
-            $("#score").html("Grade: 100!!! Great Job! You mastered this concept! Hooray!");
-        }
     } else {
         $("#i1").show();
         $("#check").show();
