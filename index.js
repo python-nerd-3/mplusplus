@@ -1,5 +1,7 @@
+
 let current = 0;
 let score = 0;
+let grade = 0;
 let questions = [
     ["Solve 2x + 3 > 13.", "x>5", "$N"],
     ["Solve |3x-5| = 3","8/3", "x=8/3"],
@@ -28,7 +30,7 @@ function update() {
 }
 
 function scoreUpdate() {
-    $("#score").html(score);
+    $("#score").html("Grade: " + Math.round((grade / (questions.length - 1)) * 100) + "% <br> Score: " + score);
 }
 
 function wrongUpdate() {
@@ -45,12 +47,15 @@ function check() {
     if ((answer == questions[current][1]) || (answer == questions[current][2] && questions[current][2] != "$N")) {
         // CORRECT!
         $("#o1").html("<h2 id='correct'>Correct</h2>");
+        // add/check score and grade
         score += 5;
+        grade += 1;
         console.log("correct");
         current += 1;
         // makes it so you don't see the button, text value
         $("#i1").hide();
         $("#check").hide();
+        // update everything
         scoreUpdate()
         setTimeout(update, 2000);
     } else if (answer == "$N") {
@@ -60,10 +65,10 @@ function check() {
     } else {
         // WRONG :(
         $("#o1").html("<h2 id='wrong'>Wrong, try again!</h2>")
-        score -= 2;
         console.log("no correct");
         $("#i1").hide();
         $("#check").hide();
+        score -= 2
         scoreUpdate()
         setTimeout(wrongUpdate, 2000);
     }
