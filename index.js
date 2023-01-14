@@ -41,7 +41,6 @@ function wrongUpdate() {
     $("#check").show();
     $("#i1").val("");
     $("#o1").html("");
-    
 }
 
 // function that checks if the answer corrects
