@@ -48,7 +48,6 @@ function wrongUpdate() {
 function check() {
     answer = $("#i1").val();
     answer = answer.replace(/\s/g, "");
-    console.log(answer);
     if ((answer == questions[current][1]) || (answer == questions[current][2] && questions[current][2] != "$N")) {
         // CORRECT!
         $("#o1").html("<h2 id='correct'>Correct!</h2>");
