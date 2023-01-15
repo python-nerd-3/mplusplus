@@ -1,5 +1,6 @@
 let current = 0;
 let score = 0;
+let answer = null;
 let questions = [
     ["Solve 2x + 3 > 13.", "x>5", "$N"],
     ["Solve |3x-5| = 3 for either value.","x=8/3", "x=2/3"],
@@ -45,10 +46,12 @@ function wrongUpdate() {
 
 // function that checks if the answer corrects
 function check() {
-    let answer = $("#i1").val();
+    answer = $("#i1").val();
+    answer = answer.replace(/\s/g, "");
+    console.log(answer);
     if ((answer == questions[current][1]) || (answer == questions[current][2] && questions[current][2] != "$N")) {
         // CORRECT!
-        $("#o1").html("<h2 id='correct'>Correct</h2>");
+        $("#o1").html("<h2 id='correct'>Correct!</h2>");
         score += 5;
         console.log("correct");
         current += 1;
@@ -58,8 +61,8 @@ function check() {
         scoreUpdate()
         setTimeout(update, 2000);
     } else if (answer == "$N") {
-        //  Cheat detector, no you
-        $("#o1").html("<h2 id='wrong'>nice try buddy</h2>");
+        // Cheat detector, no you
+        $("#o1").html("<h2 id='wrong'>nice try buddy.</h2>");
         score -= 100000;
     } else {
         // WRONG :(
@@ -71,7 +74,6 @@ function check() {
         scoreUpdate()
         setTimeout(wrongUpdate, 2000);
     }
-    console.log(questions[current][1]);
 }
 
 function ifEnterCheck(key) {
