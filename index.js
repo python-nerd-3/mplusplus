@@ -7,7 +7,7 @@ let questions = [
     ["Write 5 < x+2 < 7 in set-builder form. Simplify.","{x|3<x<5}", "$N"],
     ["Write 3 < x < 5 in interval notation.", "(3,5)", "$N"],
     ["Is 3x^2 + 3(x-5) = 2x^2 -17 + x^2 - x/217 nonlinear? Y/N", "N", "$N"],
-    ["Solve -3x - 5<10", "x>-3", "$N"],
+    ["Solve -3x - 5<10", "x>-5", "$N"],
     ["There is correlation between forest fires and fortnite players. Is there likely causation? Y/N", "N","$N"],
     ["If you put $6000 into a bank account with 5% interest for 25 years, how much do you have now?", "8250", "$N"],
     ["Done!", "$D", "$N"]
